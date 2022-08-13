@@ -22,3 +22,7 @@ zip(userName, userLast, userAge)
 ## Optional API
 
 If you want to streamline working with Optionals in Swift then please checkout [OptionalAPI Swift Package](https://github.com/sloik/OptionalAPI). It has rich deocumentation and tests to show how it can be used.
+
+# 🐇🕳 Rabbit Hole
+
+This project is part of the [🐇🕳 Rabbit Hole Packages Collection](https://github.com/sloik/RabbitHole)
