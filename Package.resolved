@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "aliaswonderland",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sloik/AliasWonderland.git",
+      "state" : {
+        "revision" : "ec0bdc643199d6aa3fd7658e3090672ae0bb856b",
+        "version" : "0.0.1"
+      }
+    },
+    {
+      "identity" : "swift-snapshot-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
+      "state" : {
+        "revision" : "f8a9c997c3c1dab4e216a8ec9014e23144cbab37",
+        "version" : "1.9.0"
+      }
+    }
+  ],
+  "version" : 2
+}
