@@ -55,11 +55,11 @@ final class ZipAsyncTests: XCTestCase {
 
 fileprivate func asyncString(_ s: String) async -> String {
 
-    let wait = 1...3
+    let wait = 1...10
     let nanosecondsInsecond = 1_000_000_000
     let waitTime = UInt64(nanosecondsInsecond * wait.randomElement()!)
 
-    try! await Task.sleep(nanoseconds:  waitTime / 1_000)
+    try! await Task.sleep(nanoseconds:  waitTime / 50)
 
     return s
 }
