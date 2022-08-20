@@ -3,6 +3,7 @@ import Foundation
 
 import AliasWonderland
 
+@discardableResult
 public func asyncZip<A,B>(
     _ f: @autoclosure AsyncProducer<A>,
     _ g: @autoclosure AsyncProducer<B>
@@ -14,6 +15,7 @@ public func asyncZip<A,B>(
     return await (a,b)
 }
 
+@discardableResult
 public func asyncZip<A,B,C>(
     _ f: @autoclosure AsyncProducer<A>,
     _ g: @autoclosure AsyncProducer<B>,
@@ -27,6 +29,7 @@ public func asyncZip<A,B,C>(
     return await (a,b,c)
 }
 
+@discardableResult
 public func asyncZip<A,B,C,D>(
     _ f: @autoclosure AsyncProducer<A>,
     _ g: @autoclosure AsyncProducer<B>,
