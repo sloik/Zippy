@@ -19,6 +19,10 @@ zip(userName, userLast, userAge)
      }
 ```
 
+# `asyncZip`
+
+Call different async functions and gather the results.
+
 ## Optional API
 
 If you want to streamline working with Optionals in Swift then please checkout [OptionalAPI Swift Package](https://github.com/sloik/OptionalAPI). It has rich deocumentation and tests to show how it can be used.

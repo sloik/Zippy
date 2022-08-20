@@ -13,7 +13,7 @@ fileprivate let h: Int? = 8
 fileprivate let i: Int? = 9
 fileprivate let j: Int? = 0
 
-class ZipTests: XCTestCase {
+final class ZipTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
