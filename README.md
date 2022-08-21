@@ -21,7 +21,55 @@ zip(userName, userLast, userAge)
 
 # `asyncZip`
 
-Call different async functions and gather the results.
+Allaws for calling multiple async functions concurently to get tuple of results.
+
+
+```swift
+
+let (name, age) = await asyncZip(
+        await asyncGetUserName(), 
+        await asyncGetUserAge()
+    )
+
+let user = User(name: name, age: age)
+
+```
+
+# `asyncZipWith`
+
+The same as `asyncZip` but the last argument is a function that can transform this tuple into a instance of some type.
+
+```swift
+
+struct User {
+    let name: String
+    let age: Int
+}
+
+let user: User = asyncZip(
+        await asyncGetUserName(), 
+        await asyncGetUserAge(),
+        with: User.init
+    )
+
+```
+
+In this example you can just write `User.init` as the compiler will match to the correct function. But you can use a closure together with trailing syntax to do whatever you need.
+
+```swift
+
+struct User {
+    let name: String
+    let age: Int
+}
+
+let user: User = asyncZip(
+        await asyncGetUserName(), 
+        await asyncGetUserAge()
+    ) { (fetchedName: String, fetchedAge: Int) in
+        User(name: fetchedName, age: fetchedAge)
+    }
+```
 
 ## Optional API
 
