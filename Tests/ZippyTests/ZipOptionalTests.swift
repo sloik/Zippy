@@ -44,4 +44,19 @@ final class ZipTests: XCTestCase {
         assertSnapshot(matching: zip(a, b, c), as: .dump)
         assertSnapshot(matching: zip(a, b), as: .dump)
     }
+
+    func test_zipWith() {
+
+        struct Z2 { let a: Int; let b: Int }
+        XCTAssertNotNil( zipWith( Z2.init )(a,b) )
+
+        struct Z3 { let a: Int; let b: Int; let c: Int }
+        XCTAssertNotNil( zipWith( Z3.init )(a,b,c) )
+
+        struct Z4 { let a: Int; let b: Int; let c: Int; let d: Int }
+        XCTAssertNotNil( zipWith( Z4.init )(a,b,c,d) )
+
+        struct Z5 { let a: Int; let b: Int; let c: Int; let d: Int; let e: Int }
+        XCTAssertNotNil( zipWith( Z5.init )(a,b,c,d,e) )
+    }
 }
