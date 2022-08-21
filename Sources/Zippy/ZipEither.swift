@@ -23,6 +23,8 @@ public func zip<A,B,L>(
     }
 }
 
+// MARK: - Zip With
+
 public func zip<A,B,C,D>(
     with f: @escaping Closure2I<A,B,C>
 )
