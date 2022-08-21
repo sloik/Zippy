@@ -1,6 +1,8 @@
 
 import Foundation
 
+import AliasWonderland
+
 // https://hoogle.haskell.org/?hoogle=zip
 
 // MARK: Zip on Optionals
@@ -17,6 +19,13 @@ public func zip<A, B>(
 }
 
 @discardableResult
+public func zipWith<A,B,C>(_ f: @escaping Closure2I<A,B,C>) -> Closure2I<A?,B?,C?> {
+    return { a, b in
+        zip(a,b).map( f )
+    }
+}
+
+@discardableResult
 public func zip<A, B, C>(
     _ a: A?,
     _ b: B?,
@@ -27,6 +36,13 @@ public func zip<A, B, C>(
     else { return .none }
 
     return (a,b,c)
+}
+
+@discardableResult
+public func zipWith<A,B,C,D>(_ f: @escaping Closure3I<A,B,C,D>) -> Closure3I<A?,B?,C?,D?> {
+    return { a, b, c in
+        zip(a,b,c).map( f )
+    }
 }
 
 @discardableResult
@@ -44,6 +60,13 @@ public func zip<A, B, C, D>(
 }
 
 @discardableResult
+public func zipWith<A,B,C,D,E>(_ f: @escaping Closure4I<A,B,C,D,E>) -> Closure4I<A?,B?,C?,D?,E?> {
+    return { a, b, c, d in
+        zip(a,b,c, d).map( f )
+    }
+}
+
+@discardableResult
 public func zip<A, B, C, D, E>(
     _ a: A?,
     _ b: B?,
@@ -56,6 +79,13 @@ public func zip<A, B, C, D, E>(
     else { return .none }
 
     return (a,b,c,d,e)
+}
+
+@discardableResult
+public func zipWith<A,B,C,D,E,F>(_ f: @escaping Closure5I<A,B,C,D,E,F>) -> Closure5I<A?,B?,C?,D?,E?,F?> {
+    return { a, b, c, d, e in
+        zip(a,b,c,d,e).map( f )
+    }
 }
 
 @discardableResult
