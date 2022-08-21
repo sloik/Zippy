@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sloik/AliasWonderland.git",
       "state" : {
-        "revision" : "ec0bdc643199d6aa3fd7658e3090672ae0bb856b",
-        "version" : "0.0.1"
+        "revision" : "89b1fece6fb8e46ba03ad0df82a300393a4a054a",
+        "version" : "0.0.3"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sloik/EitherSwift.git",
       "state" : {
-        "revision" : "da895f6e881ee5c10869a6e3bde905616ce0b069",
-        "version" : "1.0.2"
+        "revision" : "89ed28c64fff120192c011b88c179d3d23e40fa6",
+        "version" : "1.0.3"
       }
     },
     {

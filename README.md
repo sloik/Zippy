@@ -2,7 +2,7 @@
 
 Zip function.
 
-# `zip` on Optional 
+# `zip`and `zipWith` on Optional 
 
 Zip function is defined on sequences in Swift. This is a nice extension to have it on Optional. 
 
@@ -69,6 +69,45 @@ let user: User = asyncZip(
     ) { (fetchedName: String, fetchedAge: Int) in
         User(name: fetchedName, age: fetchedAge)
     }
+```
+
+# `zip`and `zipWith` on [Either](https://github.com/sloik/EitherSwift)
+
+`Either` is a more general type than `Optional` or `Result` and it also has the `zip` function defined for it (as it has map). If you want to see more about Either then check this respository: [EitherSwift Swift Package](https://github.com/sloik/EitherSwift)
+ 
+```swift
+let userName: Either<Int,String> = getUserNameOrErrorCode()
+let userLastName: Either<Int,String> = getUserLastNameOrErrorCode()
+
+zip(userName, userLastName)
+    .map { (name: String, last: String) in 
+        // When all are .right cases then you have the values here
+     }
+```
+
+## `zipWith`
+
+Many times you run your code to do smething with values that are returned. To stramline that you can pass a function to `zipWith`.
+
+```swift
+
+func validateName    (_ s: String) -> Either<Int,String> { ... }
+func validateLastName(_ s: String) -> Either<Int,String> { ... }
+
+struct User { let name: String; let lastName: String }
+
+// Given two Eithers when they both are right then returns User.
+// Notice as this also returns an Either but luckely this type has a map.
+let createUserWhenValid: Either<Int,String>,Either<Int,String>) -> Either<Int,User> = zip(with: User.init)   
+
+createUserWhenValid(validateName, validateLastName) 
+    .map { (user: User) in
+        // Real instance of User type 😎
+    }
+    .mapLeft { (errorCodes: [Int]) in
+        // error codes that were returned as left values
+    }
+
 ```
 
 ## Optional API

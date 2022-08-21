@@ -25,12 +25,12 @@ public func zip<A,B,L>(
 
 // MARK: - Zip With
 
-public func zip<A,B,C,D>(
-    with f: @escaping Closure2I<A,B,C>
+public func zip<A,B,Output, Left>(
+    with f: @escaping Closure2I<A,B,Output>
 )
--> (Either<D,A>, Either<D,B>)
--> Either<[D],C> {
-    return { eda, ebd in
-        zip(eda, ebd).map( f )
+-> (Either<Left,A>, Either<Left,B>)
+-> Either<[Left],Output> {
+    return { ela, elb in
+        zip(ela, elb).map( f )
     }
 }
