@@ -23,6 +23,11 @@ let package = Package(
           url: "https://github.com/sloik/AliasWonderland.git",
           from: "0.0.1"
         ),
+
+        .package(
+          url: "https://github.com/sloik/EitherSwift.git",
+          from: "1.0.2"
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -30,7 +35,8 @@ let package = Package(
         .target(
             name: "Zippy",
             dependencies: [
-                "AliasWonderland"
+                "AliasWonderland",
+                "EitherSwift"
             ]
         ),
 
@@ -39,6 +45,7 @@ let package = Package(
             dependencies: [
                 "Zippy",
                 .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
+                .product(name: "EitherSwift", package: "EitherSwift"),
             ]
         ),
     ]

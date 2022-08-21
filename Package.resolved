@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "eitherswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sloik/EitherSwift.git",
+      "state" : {
+        "revision" : "da895f6e881ee5c10869a6e3bde905616ce0b069",
+        "version" : "1.0.2"
+      }
+    },
+    {
       "identity" : "swift-snapshot-testing",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
