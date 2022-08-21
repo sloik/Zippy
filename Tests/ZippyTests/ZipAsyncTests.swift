@@ -58,7 +58,7 @@ final class ZipAsyncTests: XCTestCase {
         do {
             struct Z2: Equatable { let a: String; let b: String }
 
-            let result: Z2 =  await asyncZip(
+            let result: Z2 = await asyncZip(
                 await async(string: "lorem"),
                 await async(string: "ipsum"),
                 with: Z2.init
@@ -101,7 +101,7 @@ final class ZipAsyncTests: XCTestCase {
 
             let endTime = Date()
 
-            let testRunTime =  endTime.timeIntervalSince(startTime)
+            let testRunTime = endTime.timeIntervalSince(startTime)
 
             XCTAssertEqual(result, Z4(a: "lorem", b: "ipsum", c: "sit", d: "dolor"))
             XCTAssert(
