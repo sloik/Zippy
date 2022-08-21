@@ -58,7 +58,6 @@ final class ZipAsyncTests: XCTestCase {
         do {
             struct Z2: Equatable { let a: String; let b: String }
 
-
             let result: Z2 =  await asyncZip(
                 await async(string: "lorem"),
                 await async(string: "ipsum"),
