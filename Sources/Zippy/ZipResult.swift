@@ -2,10 +2,10 @@
 import Foundation
 import AliasWonderland
 
-public func zip<A,B>(
-    _ a: Result<A,Error>,
-    _ b: Result<B,Error>
-) -> Result<(A,B), [Error]> {
+public func zip<A,B, E: Error>(
+    _ a: Result<A,E>,
+    _ b: Result<B,E>
+) -> Result<(A,B), [E]> {
     switch (a, b) {
     case (.success(let a), .success(let b)):
         return .success((a, b))
@@ -23,11 +23,11 @@ public func zip<A,B>(
 
 // MARK: - Zip With
 
-public func zip<A,B,Output>(
+public func zip<A,B,Output, E: Error>(
     with f: @escaping Closure2I<A,B,Output>
 )
--> (Result<A, Error>, Result<B,Error>)
--> Result<Output, [Error]> {
+-> (Result<A, E>, Result<B, E>)
+-> Result<Output, [E]> {
     return { rla, rlb in
         zip(rla, rlb).map( f )
     }

@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sloik/EitherSwift.git",
       "state" : {
-        "revision" : "89ed28c64fff120192c011b88c179d3d23e40fa6",
-        "version" : "1.0.3"
+        "revision" : "d2d75dd86afbff176769f63e8bca4dc2b3fed204",
+        "version" : "1.0.4"
       }
     },
     {

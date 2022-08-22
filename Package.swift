@@ -46,6 +46,9 @@ let package = Package(
                 "Zippy",
                 .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
                 .product(name: "EitherSwift", package: "EitherSwift"),
+            ],
+            exclude: [
+                "../ZippyTests/__Snapshots__/"
             ]
         ),
     ]
