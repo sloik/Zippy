@@ -3,6 +3,7 @@ import AliasWonderland
 import Zippy
 import SnapshotTesting
 
+@MainActor 
 final class ZipAsyncTests: XCTestCase {
 
     override func setUp() {
@@ -19,7 +20,7 @@ final class ZipAsyncTests: XCTestCase {
                 await asyncString("b")
             )
 
-            assertSnapshot(
+           assertSnapshot(
                 matching: result,
                 as: .dump
             )
