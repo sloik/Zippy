@@ -1,3 +1,6 @@
+![Main](https://github.com/sloik/Zippy/actions/workflows/swift.yml/badge.svg?branch=main)
+![Nightly](https://github.com/sloik/Zippy/actions/workflows/nightly.yml/badge.svg)
+
 # Zippy 🤐
 
 Zip function.
