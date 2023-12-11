@@ -19,7 +19,7 @@ public func zip<A, B>(
 }
 
 @discardableResult
-public func zipWith<A,B,C>(_ f: @escaping Closure2I<A,B,C>) -> Closure2I<A?,B?,C?> {
+public func zipWith<A,B,C>(_ f: @escaping Closure<A,B,C>) -> Closure<A?,B?,C?> {
     return { a, b in
         zip(a,b).map( f )
     }
@@ -39,7 +39,7 @@ public func zip<A, B, C>(
 }
 
 @discardableResult
-public func zipWith<A,B,C,D>(_ f: @escaping Closure3I<A,B,C,D>) -> Closure3I<A?,B?,C?,D?> {
+public func zipWith<A,B,C,D>(_ f: @escaping Closure<A,B,C,D>) -> Closure<A?,B?,C?,D?> {
     return { a, b, c in
         zip(a,b,c).map( f )
     }
@@ -60,7 +60,7 @@ public func zip<A, B, C, D>(
 }
 
 @discardableResult
-public func zipWith<A,B,C,D,E>(_ f: @escaping Closure4I<A,B,C,D,E>) -> Closure4I<A?,B?,C?,D?,E?> {
+public func zipWith<A,B,C,D,E>(_ f: @escaping Closure<A,B,C,D,E>) -> Closure<A?,B?,C?,D?,E?> {
     return { a, b, c, d in
         zip(a,b,c, d).map( f )
     }
@@ -82,7 +82,7 @@ public func zip<A, B, C, D, E>(
 }
 
 @discardableResult
-public func zipWith<A,B,C,D,E,F>(_ f: @escaping Closure5I<A,B,C,D,E,F>) -> Closure5I<A?,B?,C?,D?,E?,F?> {
+public func zipWith<A,B,C,D,E,F>(_ f: @escaping Closure<A,B,C,D,E,F>) -> Closure<A?,B?,C?,D?,E?,F?> {
     return { a, b, c, d, e in
         zip(a,b,c,d,e).map( f )
     }

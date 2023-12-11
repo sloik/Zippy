@@ -51,7 +51,7 @@ public func asyncZip<A,B,C,D>(
 public func asyncZip<A,B,C>(
     _ f: @autoclosure AsyncProducer<A>,
     _ g: @autoclosure AsyncProducer<B>,
-    with transform: @escaping Closure2I<A,B,C>
+    with transform: @escaping Closure<A,B,C>
 ) async -> C {
     let (a,b): (A,B) = await asyncZip( await f() , await g() )
     return transform(a, b)
@@ -62,7 +62,7 @@ public func asyncZip<A,B,C,D>(
     _ f: @autoclosure AsyncProducer<A>,
     _ g: @autoclosure AsyncProducer<B>,
     _ h: @autoclosure AsyncProducer<C>,
-    with transform: @escaping Closure3I<A,B,C,D>
+    with transform: @escaping Closure<A,B,C,D>
 ) async -> D {
     let (a,b,c): (A,B,C) = await asyncZip( await f() , await g(), await h() )
     return transform(a, b, c)
@@ -74,7 +74,7 @@ public func asyncZip<A,B,C,D,E>(
     _ g: @autoclosure AsyncProducer<B>,
     _ h: @autoclosure AsyncProducer<C>,
     _ i: @autoclosure AsyncProducer<D>,
-    with transform: @escaping Closure4I<A,B,C,D,E>
+    with transform: @escaping Closure<A,B,C,D,E>
 ) async -> E {
     let (a,b,c, d): (A,B,C,D) = await asyncZip( await f() , await g(), await h(), await i() )
     return transform(a, b, c, d)

@@ -26,7 +26,7 @@ public func zip<A,B,L>(
 // MARK: - Zip With
 
 public func zip<A,B,Output, Left>(
-    with f: @escaping Closure2I<A,B,Output>
+    with f: @escaping Closure<A,B,Output>
 )
 -> (Either<Left,A>, Either<Left,B>)
 -> Either<[Left],Output> {

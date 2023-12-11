@@ -47,7 +47,7 @@ final class ZipEitherTests: XCTestCase {
     func test_zipWith() {
 
         do {
-            let sut: Closure2I< Either<String,Int>, Either<String,Int>, Either<[String],Z2>> = zip(with: Z2.init)
+            let sut: Closure< Either<String,Int>, Either<String,Int>, Either<[String],Z2>> = zip(with: Z2.init)
 
             let result: Either<[String], Z2> = sut( eitherRightStringInt, .right(52) )
 
